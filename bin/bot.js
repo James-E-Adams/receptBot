@@ -8,7 +8,7 @@
  * @author Luciano Mammino <lucianomammino@gmail.com>
  */
 
-var NorrisBot = require('../lib/norrisbot');
+var ReceptionBot = require('../lib/receptionbot');
 
 /**
  * Environment variables used to configure the bot:
@@ -18,14 +18,12 @@ var NorrisBot = require('../lib/norrisbot');
  *  BOT_DB_PATH: the path of the SQLite database used by the bot
  *  BOT_NAME: the username you want to give to the bot within your organisation.
  */
-var token = process.env.BOT_API_KEY || require('../token');
-var dbPath = process.env.BOT_DB_PATH;
-var name = process.env.BOT_NAME;
+var token = process.env.BOT_API_KEY;
+var name = "reception";
 
-var norrisbot = new NorrisBot({
+var receptionbot = new ReceptionBot({
     token: token,
-    dbPath: dbPath,
     name: name
 });
 
-norrisbot.run();
+receptionbot.run();
